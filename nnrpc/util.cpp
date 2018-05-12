@@ -1,8 +1,11 @@
 #include "util.h"
 #include <functional>
 
-uint64_t strhash(const std::string &str)
+namespace util
 {
-	std::hash<std::string> hs;
-	return hs(str);
+	uint64_t strhash(const std::string &str)
+	{
+		std::hash<std::string> hs;
+		return hs(str);
+	}
 }

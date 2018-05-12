@@ -75,28 +75,36 @@ public:
 	int send(const void* buf, size_t len, int flags)
 	{
 		int ret = nn_send(s_, buf, len, flags);
-		assert(nn_errno() == EAGAIN);
+		if (ret < 0) {
+			assert(nn_errno() == EAGAIN);
+		}
 		return ret;
 	}
 
-	int rect(void *buf, size_t len, int flags)
+	int recv(void *buf, size_t len, int flags)
 	{
 		int ret = nn_recv(s_, buf, len, flags);
-		assert(nn_errno() == EAGAIN);
+		if (ret < 0) {
+			assert(nn_errno() == EAGAIN);
+		}
 		return ret;
 	}
 
 	int sendmsg(const struct nn_msghdr *msg, int flags)
 	{
 		int ret = nn_sendmsg(s_, msg, flags);
-		assert(nn_errno() == EAGAIN);
+		if (ret < 0) {
+			assert(nn_errno() == EAGAIN);
+		}
 		return ret;
 	}
 
 	int recvmsg(struct nn_msghdr *msg, int flags)
 	{
 		int ret = nn_recvmsg(s_, msg, flags);
-		assert(nn_errno() == EAGAIN);
+		if (ret < 0) {
+			assert(nn_errno() == EAGAIN);
+		}
 		return ret;
 	}
 

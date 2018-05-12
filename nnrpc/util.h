@@ -4,6 +4,10 @@
 #include <string>
 #include <cstdint>
 
-uint64_t strhash(const std::string &str);
+namespace util
+{
+	uint64_t strhash(const std::string &str);
+}
+
 
 #endif // NNRPC_UTIL_H

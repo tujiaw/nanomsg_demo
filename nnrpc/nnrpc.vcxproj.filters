@@ -8,6 +8,9 @@
     <Filter Include="proto">
       <UniqueIdentifier>{a1e096da-ac6f-4cc2-a13e-e65d7e807452}</UniqueIdentifier>
     </Filter>
+    <Filter Include="service">
+      <UniqueIdentifier>{568529af-7086-48d7-82b0-1d35f5e5eb0c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="proto\echo.pb.cc">
@@ -16,6 +19,11 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RpcChannel.cpp" />
     <ClCompile Include="util.cpp" />
+    <ClCompile Include="RpcServer.cpp" />
+    <ClCompile Include="service\EchoServiceImpl.cpp">
+      <Filter>service</Filter>
+    </ClCompile>
+    <ClCompile Include="RpcClient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="proto\echo.pb.h">
@@ -24,5 +32,11 @@
     <ClInclude Include="RpcChannel.h" />
     <ClInclude Include="Socket.h" />
     <ClInclude Include="util.h" />
+    <ClInclude Include="RpcMethod.h" />
+    <ClInclude Include="RpcServer.h" />
+    <ClInclude Include="service\EchoServiceImpl.h">
+      <Filter>service</Filter>
+    </ClInclude>
+    <ClInclude Include="RpcClient.h" />
   </ItemGroup>
 </Project>
